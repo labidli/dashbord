@@ -2,15 +2,16 @@ const mongoose = require('mongoose');
 
 const statsSchema = new mongoose.Schema({
   userid: {
-    type: String,
-    required: true
+     type: mongoose.Schema.Types.ObjectId, 
+     ref: 'User', 
+     required: true
   },
   mois: {
     type: String,
     required: true
   },
   utilisateurs: {
-    type: [Number],  // Tableau de nombres
+    type: [Number], 
     default: []
   },
   revenus: {

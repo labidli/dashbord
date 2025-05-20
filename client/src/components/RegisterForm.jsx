@@ -34,32 +34,40 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleRegister}>
-      <h2>Inscription</h2>
+    <form onSubmit={handleRegister}  className="space-y-6">
+        
+      <div>
+        <label className="block mb-1 text-sm font-medium text-gray-700">Nom d'utilisateur</label>
+        <input
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Nom d'utilisateur"
+          required
+        />
+      </div>
+      <div>
+          <label className="block mb-1 text-sm font-medium text-gray-700">Mot de passe</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Mot de passe"
+            required
+          />
+      </div>
+      <div>
+          <label className="block mb-1 text-sm font-medium text-gray-700">Role</label>
+          <input
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            placeholder="Role"
+            required
+          />
+      </div>
 
-      <input
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Nom d'utilisateur"
-        required
-      />
-
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Mot de passe"
-        required
-      />
-
-      <input
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
-        placeholder="Role"
-        required
-      />
-
-      <button type="submit" disabled={loading}>
+      <button type="submit"
+      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
+         disabled={loading}>
         {loading ? 'Enregistrement...' : 'S’enregistrer'}
       </button>
 

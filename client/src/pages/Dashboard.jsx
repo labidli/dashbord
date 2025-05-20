@@ -66,12 +66,12 @@ const MenuProfil = ({ userInfo, onLogout }) => {
           </li>
           <li>
             <a
-              href="/settings"
+              href="/stats-table"
               className="flex items-center px-4 py-2 hover:bg-indigo-100 text-gray-700"
-              onClick={() => setOpen(false)}
+              onClick={() => setOpen(true)}
             >
               <Cog6ToothIcon className="w-5 h-5 mr-3" />
-              Paramètres
+              Statistique
             </a>
           </li>
         </ul>
@@ -90,7 +90,7 @@ const MenuProfil = ({ userInfo, onLogout }) => {
 const Dashboard = () => {
   const [data, setData] = useState([]);
   const [userInfo, setUserInfo] = useState(null);
-  const[stats,setStats]= useState(null);
+  //const[stats,setStats]= useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -99,6 +99,7 @@ const Dashboard = () => {
     const fetchStats = async () => {
     try {
       const token = localStorage.getItem('token');
+             console.log ('token',token);
       const res = await API.get('/stats', {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -107,9 +108,9 @@ const Dashboard = () => {
   
       const formatted = res.data.map(item => ({
         name: item.Mois,
-        utilisateurs: item["Utilisateurs actifs"] || 0,
-        revenus: item["Revenus (€)"] || 0,
-        engagement: item["Engagement (%)"] || 0,
+        utilisateurs: item["utilisateurs"] || 0,
+        revenus: item["revenus"] || 0,
+        engagement: item["engagement"] || 0,
       })); 
       setData(formatted);
     } catch (err) {
@@ -158,6 +159,13 @@ const Dashboard = () => {
 
         <section className="p-6 bg-white rounded shadow">
           <h2 className="text-xl font-semibold mb-6">Statistiques hebdo</h2>
+            <div className="mt-8 text-right">
+             <button
+               onClick={() => navigate('/stats-table')}
+               className="mt-3 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+               Format Tableau
+             </button>
+           </div>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={data}>
              <Line type="monotone" dataKey="engagement" stroke="#6366F1" strokeWidth={3} />
