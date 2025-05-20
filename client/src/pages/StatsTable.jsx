@@ -83,7 +83,7 @@ const parseXLSX = (file) => {
   reader.readAsBinaryString(file);
 };
 
-// Envoi en “bulk” vers ton serveur
+// Envoi en “bulk” vers  serveur
 const bulkUpload = async (arrayOfStats) => {
   try {
     const token = localStorage.getItem('token');

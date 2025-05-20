@@ -17,7 +17,7 @@ const MenuProfil = ({ userInfo, onLogout }) => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef();
 
-  // Fermer menu au clic extérieur
+  
   useEffect(() => {
     const handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -90,7 +90,6 @@ const MenuProfil = ({ userInfo, onLogout }) => {
 const Dashboard = () => {
   const [data, setData] = useState([]);
   const [userInfo, setUserInfo] = useState(null);
-  //const[stats,setStats]= useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {

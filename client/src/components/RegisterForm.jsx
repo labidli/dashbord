@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import API from '../api';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [username, setUsername ] = useState('');
@@ -9,20 +10,25 @@ const RegisterForm = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
    const [success, setSuccess] = useState(false);
-
+   const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
     setLoading(true);
     setErrorMsg('');
     setSuccessMsg('');
 
+
     try {
       const res = await API.post('/auth/register', { username, password ,role });
       setSuccess(true);
-      setSuccessMsg('✅ Utilisateur enregistré avec succès ! Vous pouvez vous connecter.');
+      setSuccessMsg(' Utilisateur enregistré avec succès ! Vous pouvez vous connecter.');
       setUsername('');
       setPassword('');
-      setRole('');
+      setRole('User');
+
+      setTimeout(() => {
+       navigate('/login'); 
+       }, 1000);
     } catch (err) {
       console.error('Erreur d’enregistrement :', err);
       setErrorMsg(
