@@ -1,0 +1,77 @@
+[{
+  
+  "mois": "Janvier",
+  "utilisateurs": 1200,
+  "revenus": 10000,
+  "engagement": 75
+},
+{
+  
+  "mois": "Février",
+  "utilisateurs": 1350,
+  "revenus": 12500,
+  "engagement": 80
+},
+{
+  
+  "Mois": "Mars",
+  "utilisateurs": 1600,
+  "revenus": 14000,
+  "engagement": 78
+},
+{
+  
+  "mois": "Avril",
+  "utilisateurs": 2700,
+  "revenus": 25000,
+  "engagement": 98
+},
+{
+  
+  "mois": "Mai",
+  "utilisateurs": 3900,
+  "revenus": 56789,
+  "engagement": 55
+},
+{
+  
+  "mois": "Juin",
+  "utilisateurs": 1800,
+  "revenus": 10080,
+  "engagement": 99
+},
+{
+ 
+  "mois": "Juillet",
+  "utilisateurs": 1600,
+  "revenus": 12346,
+  "engagement": 66
+},
+{
+ 
+  "mois": "Aout",
+  "utilisateurs": 2500,
+  "revenus": 13456,
+  "engagement": 77
+},
+{
+  
+  "mois": "Septembre",
+  "utilisateurs": 6098,
+  "revenus": 23478,
+  "engagement": 67
+},
+{
+  
+  "mois": "Novembre",
+  "utilisateurs": 7654,
+  "revenus": 87643,
+  "engagement": 22
+},
+{
+  
+  "mois": "Decembre",
+  "utilisateurs": 8765,
+  "revenus": 56670,
+  "engagement": 68
+}]
