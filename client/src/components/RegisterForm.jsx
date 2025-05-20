@@ -3,7 +3,7 @@ import API from '../api';
 
 const RegisterForm = () => {
   const [username, setUsername ] = useState('');
-  const [role, setRole ] = useState('');
+  const [role, setRole ] = useState('User');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -55,15 +55,7 @@ const RegisterForm = () => {
             required
           />
       </div>
-      <div>
-          <label className="block mb-1 text-sm font-medium text-gray-700">Role</label>
-          <input
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            placeholder="Role"
-            required
-          />
-      </div>
+      
 
       <button type="submit"
       className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"
